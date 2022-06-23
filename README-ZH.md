@@ -24,3 +24,7 @@ curl -O "https://raw.githubusercontent.com/dev-zhang/flutter_unused_image/main/u
 ```sh
 ./unused.sh
 ```
+
+## 截图
+
+![](https://cdn.jsdelivr.net/gh/dev-zhang/imgHosting/img/flutter_unused_images_01.png)
