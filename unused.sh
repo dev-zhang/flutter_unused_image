@@ -37,8 +37,26 @@ function getSizeText(){
 
 echo "Searching unused files. This may take a while..."
 
+if [ -e 'pubspec.yaml' -a -e 'lib' ]; then
+    # echo "存在pubspec.yaml文件和lib目录，识别到Flutter项目。"
+    echo
+else
+    # echo "当前目录未发现Flutter项目"
+    echo "No Flutter projects found in the current directory."
+    exit 1
+fi
+
 target_path="`pwd`/assets"
 # echo "target_path:${target_path}";
+
+if [ -e ${target_path} ]
+then
+    echo
+else
+    echo "${target_path} does not exist."
+    exit 1
+fi
+
 unused_files=()
 unused_files_size=0
 for file in `find ${target_path} \( -iname "*.webp" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -type f `;
